@@ -22,8 +22,9 @@ CV_FOLDS, CV_REPEATS = 5, 3
 QAOA_REPS = 3
 QAOA_RESTARTS = 8
 QAOA_MAXITER = 250
-CVAR_ALPHA = 0.1
-STAGE2_SHOTS = 8192
+CVAR_ALPHA = 0.02
+STAGE2_SHOTS = 16384
+FORCE_SLACK = True            # encode budget/capacity with slack even when non-binding
 STAGE2_NOISE_SCALES = [0.0, 1.0, 3.0]
 STAGE2_NOISE_SHOTS = 1000            # noisy 15-qubit trajectories are slow
 
