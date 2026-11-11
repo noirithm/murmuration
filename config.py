@@ -15,7 +15,8 @@ RESULTS = ROOT / "results"
 N_QUBITS_S1 = 5
 FEATURE_MAP_REPS = 2
 QUANTUM_SCALES = [0.5, 1.0, 2.0]     # feature-map bandwidth variants, compared by CV on train only
-CV_FOLDS, CV_REPEATS = 5, 2
+QUANTUM_ENCODERS = ["pca", "supervised"]
+CV_FOLDS, CV_REPEATS = 5, 3
 
 # Stage 2
 QAOA_REPS = 3
@@ -64,3 +65,6 @@ def save_json(obj, name: str) -> Path:
     path = RESULTS / name
     path.write_text(json.dumps(obj, indent=2, default=_np))
     return path
+
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)   # sklearn 1.9 deprecation noise
